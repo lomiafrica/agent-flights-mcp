@@ -7,7 +7,7 @@
     "url": "https://github.com/lomiafrica/agent-flights-mcp",
     "source": "github"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "websiteUrl": "https://lowest.flights/connect",
   "remotes": [
     {
@@ -19,6 +19,15 @@
           "isSecret": true,
           "name": "Authorization"
         }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://lowest.flights/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
       ]
     }
   ]
