@@ -1,6 +1,6 @@
 {
   "name": "agent-flights",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Cheapest flights worldwide, strong on Africa: flight search, price calendars, cheap destinations and booking links.",
   "mcpServers": {
     "agent-flights": {

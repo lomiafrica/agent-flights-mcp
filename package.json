@@ -1,17 +1,42 @@
 {
   "name": "agent-flights-mcp",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Agent Flights MCP server: cheapest flights worldwide (strong on Africa) for AI agents. Stdio bridge to the remote MCP at https://lowest.flights/mcp.",
   "mcpName": "flights.lowest/agent-flights",
-  "bin": { "agent-flights-mcp": "bin/agent-flights-mcp.js" },
-  "files": ["bin", "README.md", "LICENSE", "server.json"],
+  "bin": {
+    "agent-flights-mcp": "bin/agent-flights-mcp.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
   "type": "module",
-  "engines": { "node": ">=18" },
-  "dependencies": { "mcp-remote": "^0.16.6" },
-  "keywords": ["mcp", "model-context-protocol", "flights", "travel", "ai-agents", "flight-search", "africa", "cheap-flights"],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "mcp-remote": "^0.16.6"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "flights",
+    "travel",
+    "ai-agents",
+    "flight-search",
+    "africa",
+    "cheap-flights"
+  ],
   "homepage": "https://lowest.flights",
-  "repository": { "type": "git", "url": "git+https://github.com/lomiafrica/agent-flights-mcp.git" },
-  "bugs": { "url": "https://github.com/lomiafrica/agent-flights-mcp/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lomiafrica/agent-flights-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lomiafrica/agent-flights-mcp/issues"
+  },
   "license": "MIT",
   "author": "lomi. Inc <babacar@lomi.africa>"
 }
