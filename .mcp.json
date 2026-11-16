@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "agent-flights": {
+      "url": "https://lowest.flights/mcp"
+    }
+  }
+}
