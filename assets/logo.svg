@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Agent Flights">
+  <rect width="64" height="64" rx="15" fill="#E8711A"/>
+  <path d="M10 50 L54 50" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+  <g transform="translate(32 30) rotate(135) scale(0.74) translate(-32 -30)">
+    <path fill="#FFFFFF" d="M32 8c2 0 3.5 2 3.5 5v12l16 9v5l-16-4v9l5 4v4l-8.5-2.5-8.5 2.5v-4l5-4v-9l-16 4v-5l16-9V13c0-3 1.5-5 3.5-5z"/>
+  </g>
+</svg>

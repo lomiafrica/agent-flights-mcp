@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "flights.lowest/agent-flights",
+  "description": "Cheapest flights worldwide, strong on Africa, with attributed booking links.",
+  "title": "Agent Flights",
+  "repository": {
+    "url": "https://github.com/lomiafrica/agent-flights-mcp",
+    "source": "github"
+  },
+  "version": "1.2.0",
+  "websiteUrl": "https://lowest.flights/connect",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://lowest.flights/mcp",
+      "headers": [
+        {
+          "description": "Optional. Bearer token for an Agent Flights MCP key. Not needed while MCP is free.",
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ]
+    }
+  ]
+}
