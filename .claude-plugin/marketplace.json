@@ -1,0 +1,17 @@
+{
+  "name": "agent-flights",
+  "owner": {
+    "name": "LOMI. INC",
+    "email": "babacar@lowest.flights"
+  },
+  "plugins": [
+    {
+      "name": "agent-flights",
+      "source": "./",
+      "description": "Cheapest flights worldwide, strong on Africa: search fares, find the cheapest dates or destinations, and hand travellers a booking link. Free remote MCP, no key needed.",
+      "version": "1.2.2",
+      "category": "travel",
+      "homepage": "https://lowest.flights"
+    }
+  ]
+}

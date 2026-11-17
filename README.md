@@ -2,12 +2,19 @@
 
 # Agent Flights MCP
 
-**Cheapest flights worldwide, strong on Africa, for AI agents.** Agent Flights ([lowest.flights](https://lowest.flights)) is a free remote MCP server and REST API that compares Kiwi.com, Duffel and Aviasales fares, expands nearby airports, combines self-transfer one-ways when cheaper, and returns the **cheapest all-in fare** plus a **cheapest-sensible** alternative (no 20h layovers or risky overnight transfers).
+<p align="center">
+  <a href="https://cursor.com/en/install-mcp?name=agent-flights&config=eyJ1cmwiOiAiaHR0cHM6Ly9sb3dlc3QuZmxpZ2h0cy9tY3AifQ=="><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add to Cursor" height="32"></a>
+  <a href="https://insiders.vscode.dev/redirect/mcp/install?name=agent-flights&config=%7B%22type%22%3A%20%22http%22%2C%20%22url%22%3A%20%22https%3A//lowest.flights/mcp%22%7D"><img src="https://img.shields.io/badge/VS_Code-Add_MCP-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Add to VS Code" height="32"></a>
+  <a href="https://insiders.vscode.dev/redirect/mcp/install?name=agent-flights&config=%7B%22type%22%3A%20%22http%22%2C%20%22url%22%3A%20%22https%3A//lowest.flights/mcp%22%7D&quality=insiders"><img src="https://img.shields.io/badge/VS_Code_Insiders-Add_MCP-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Add to VS Code Insiders" height="32"></a>
+  <a href="https://lmstudio.ai/install-mcp?name=agent-flights&config=eyJ1cmwiOiAiaHR0cHM6Ly9sb3dlc3QuZmxpZ2h0cy9tY3AifQ=="><img src="https://img.shields.io/badge/LM_Studio-Add_MCP-4f46e5?style=flat-square" alt="Add to LM Studio" height="32"></a>
+</p>
+
+**Cheapest flights worldwide, strong on Africa, for AI agents.** Agent Flights ([lowest.flights](https://lowest.flights)) is a free remote MCP server and REST API that compares live and cached fares from several sources and booking sites, expands nearby airports, combines self-transfer one-ways when cheaper, and returns the **cheapest all-in fare** plus a **cheapest-sensible** alternative (no 20h layovers or risky overnight transfers).
 
 - **Remote MCP (Streamable HTTP):** `https://lowest.flights/mcp`
 - **REST API:** `https://lowest.flights/api/v1` ([OpenAPI](https://lowest.flights/api/v1/openapi.json))
 - **Official MCP Registry:** [`flights.lowest/agent-flights`](https://registry.modelcontextprotocol.io/?q=flights.lowest%2Fagent-flights)
-- **Docs:** [lowest.flights/connect](https://lowest.flights/connect) · [llms.txt](https://lowest.flights/llms.txt)
+- **Docs:** [lowest.flights/agents](https://lowest.flights/agents) · [agents.md](https://lowest.flights/agents.md) · [llms.txt](https://lowest.flights/llms.txt) · [Agent skill](https://lowest.flights/skill.md)
 - **Free:** no key and no payment needed. Optional self-serve API key for higher limits.
 
 ## Tools
@@ -18,9 +25,10 @@
 | `find_cheapest_dates` | Price calendar: cheapest fare per day of a month on one route. |
 | `explore_cheap_destinations` | Cheapest destinations from an origin for a month, optionally under a budget. |
 | `get_flight_offer` | Full details of one offer: legs, layovers, baggage, fees, warnings. |
-| `get_booking_link` | Booking link that redirects to the best bookable partner (Kiwi.com, Aviasales, Trip.com). |
+| `get_booking_link` | Booking link that redirects to the best bookable booking site. |
 | `list_flight_sources` | Which flight data sources are live right now. |
 | `register_agent` | Self-register your agent and get an `af_live_` API key instantly (no email). |
+| `unlock_mcp` | Returns a notice that MCP is free; creates no checkout. |
 
 ## Install
 
@@ -45,6 +53,46 @@ Use the URL `https://lowest.flights/mcp`.
 ```bash
 claude mcp add --transport http agent-flights https://lowest.flights/mcp
 ```
+
+### Claude (claude.ai, Desktop, mobile)
+
+Settings → Connectors → Add custom connector → `https://lowest.flights/mcp` (no sign-in).
+
+### ChatGPT
+
+Settings → Apps → Advanced settings → Developer mode → Create app → `https://lowest.flights/mcp`, Authentication: none.
+
+### Grok and Grok Bot
+
+- grok.com: [Connectors](https://grok.com/connectors) → New Connector → Custom → `https://lowest.flights/mcp`.
+- Grok CLI: `grok mcp add --transport http agent-flights https://lowest.flights/mcp`
+- Grok Bot: ask “Add a custom MCP server called agent-flights at https://lowest.flights/mcp” and approve the card.
+
+### Codex CLI (`~/.codex/config.toml`)
+
+```toml
+[mcp_servers.agent_flights]
+url = "https://lowest.flights/mcp"
+```
+
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/lomiafrica/agent-flights-mcp
+```
+
+### Plugin (Cursor, Claude Code, Codex)
+
+This repo is also an agent plugin: `.cursor-plugin/plugin.json`, `.claude-plugin/plugin.json` (+ `marketplace.json`), `.codex-plugin/plugin.json`, root `plugin.json`, `mcp.json` and the `skills/agent-flights` skill. Claude Code:
+
+```bash
+/plugin marketplace add lomiafrica/agent-flights-mcp
+/plugin install agent-flights@agent-flights
+```
+
+### Framework quickstarts
+
+Vercel AI SDK, OpenAI Agents SDK, Claude Agent SDK, LangChain, CrewAI, Google ADK and the xAI API: [lowest.flights/agents#frameworks](https://lowest.flights/agents#frameworks).
 
 ### Claude Desktop, Cline, Windsurf, or any stdio-only client
 
@@ -92,8 +140,16 @@ Send it as `Authorization: Bearer <apiKey>`. Keys raise limits and attribute boo
 { "origin": "ABJ", "destination": "CDG", "departureDate": "2026-12-18", "returnDate": "2027-01-05", "flexDays": 3, "currency": "XOF" }
 ```
 
+## Privacy Policy
+
+Agent Flights receives only the tool arguments your agent sends (route, dates, passengers, cabin, currency), plus IP address and client name for rate limits. It collects no traveller names, IDs, payment data or conversation history. Search caches expire within about 24 hours; usage counters within 3 days. Full policy: https://lowest.flights/privacy · Terms: https://lowest.flights/terms
+
+## Support
+
+Email babacar@lowest.flights or open an issue in this repository.
+
 ## About
 
-Built by [lomi.](https://lomi.africa). Agent Flights earns a partner commission on bookings and never adds a booking fee. This repo holds the public install material; the hosted server runs at lowest.flights.
+Built by [lomi.](https://lomi.africa) (LOMI. INC). Agent Flights earns a partner commission on bookings and never adds a booking fee. This repo holds the public install material; the hosted server runs at lowest.flights.
 
 License: MIT
