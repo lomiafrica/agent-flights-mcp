@@ -1,0 +1,40 @@
+{
+  "name": "agent-flights",
+  "version": "1.2.2",
+  "description": "Cheapest flights worldwide, strong on Africa: search fares, find the cheapest dates or destinations, and hand travellers a booking link. Free remote MCP, no key needed.",
+  "author": {
+    "name": "LOMI. INC",
+    "email": "babacar@lowest.flights",
+    "url": "https://lowest.flights"
+  },
+  "homepage": "https://lowest.flights",
+  "repository": "https://github.com/lomiafrica/agent-flights-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "flights",
+    "travel",
+    "cheap-flights",
+    "africa",
+    "flight-search",
+    "agents"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json",
+  "interface": {
+    "displayName": "Agent Flights",
+    "shortDescription": "Cheapest flights, strong on Africa",
+    "longDescription": "Cheapest flights worldwide, strong on Africa: search fares, find the cheapest dates or destinations, and hand travellers a booking link. Free remote MCP, no key needed.",
+    "developerName": "LOMI. INC",
+    "category": "Travel",
+    "websiteURL": "https://lowest.flights",
+    "privacyPolicyURL": "https://lowest.flights/privacy",
+    "termsOfServiceURL": "https://lowest.flights/terms",
+    "logo": "./assets/logo-512.png",
+    "defaultPrompt": [
+      "Cheapest flight from Abidjan to Paris in December",
+      "Cheapest day to fly Dakar to Lisbon next month",
+      "Where can I fly from Lagos for under 300 EUR?"
+    ]
+  }
+}
