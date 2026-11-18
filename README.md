@@ -2,6 +2,8 @@
 
 # Agent Flights MCP
 
+> **Archived, 18 Nov 2026.** Development of this package moved into the main Agent Flights repository (`princemuichkine/agent-flights`, folder `mcp/`). This repo stays public and read-only so existing installs and directory listings keep working. Nothing changes for users: the npm package is still `agent-flights-mcp`, the registry name is still `flights.lowest/agent-flights`, and the remote server is still `https://lowest.flights/mcp`. Questions: babacar@lomi.africa.
+
 <p align="center">
   <a href="https://cursor.com/en/install-mcp?name=agent-flights&config=eyJ1cmwiOiAiaHR0cHM6Ly9sb3dlc3QuZmxpZ2h0cy9tY3AifQ=="><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add to Cursor" height="32"></a>
   <a href="https://insiders.vscode.dev/redirect/mcp/install?name=agent-flights&config=%7B%22type%22%3A%20%22http%22%2C%20%22url%22%3A%20%22https%3A//lowest.flights/mcp%22%7D"><img src="https://img.shields.io/badge/VS_Code-Add_MCP-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Add to VS Code" height="32"></a>
